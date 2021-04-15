@@ -16,6 +16,14 @@ const User = dbConfig.define('user', {
         allowNull: true,
         unique: {
             msg: 'El correo ya existe'
+        },
+        validate: {
+            isEmail: {
+                msg: 'El correo ingresado no es valido'
+            },
+            notEmpty: {
+                msg: 'El campo correo es obligatorio'
+            }
         }
     },
     password: {
