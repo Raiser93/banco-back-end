@@ -11,7 +11,8 @@ const createAccount = async (req = request, res = response) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            ok: false
+            ok: false,
+            error: error.errors[0] ? error.errors[0].message : ''
         });
     }
 }
@@ -32,7 +33,8 @@ const queryAccountUser = async (req = request, res = response) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            ok: false
+            ok: false,
+            error: error.errors[0] ? error.errors[0].message : ''
         });
     }
 }
