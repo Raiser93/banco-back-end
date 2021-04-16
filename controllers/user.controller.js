@@ -5,14 +5,14 @@ const { User } = require('../models/User');
 
 // Registrar usuario
 const userRegister = async (req = request, res = response) => {
-    const {name, email, password} = req.body;
+    const {name, email, password, identification_number} = req.body;
     try {
         // Encriptar contraseña
         const salt = bcrypt.genSaltSync();
         const passwordBcrypt = bcrypt.hashSync(password, salt);
 
         // Crear Usuario
-        const user = await User.create({name, email, password: passwordBcrypt});
+        const user = await User.create({name, email, password: passwordBcrypt, identification_number});
 
         // Generar JWT
         const token = await generateJWT({

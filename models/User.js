@@ -11,6 +11,13 @@ const User = dbConfig.define('user', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    identification_number: {
+        type: DataTypes.CHAR(12),
+        allowNull: false,
+        unique: {
+            msg: 'El numero de identificacion ya existe'
+        },
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: true,
