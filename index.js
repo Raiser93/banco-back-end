@@ -10,8 +10,9 @@ const { authRoutes } = require('./routes/auth.routes');
 const { bankAccountRoutes } = require('./routes/bank-account.routes');
 
 // Importar modelos de tablas
-const {User} = require('./models/User');
-const {BankAccount} = require('./models/BankAccount');
+const { User } = require('./models/User');
+const { BankAccount } = require('./models/BankAccount');
+const { BankAccountThird } = require('./models/BankAccountThird');
 
 // Crear Servidor Express
 const app = express();
